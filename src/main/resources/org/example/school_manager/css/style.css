@@ -1,0 +1,24 @@
+.textfield{
+    -fx-background-color:transparent;
+    -fx-border-color: red;
+     -fx-border-width:.0px 0px 1px 0px;
+     -fx-font-family:"Tahoma";
+     -fx-font-size:13px;
+}
+.textfield:focused{
+    -fx-border-width:.2px;
+    -fx-border-color: red;
+}
+.btn{
+     -fx-background-color:  #dd1717;
+}
+.btn:hover{
+    -fx-background-color:  red;
+}
+.shadow{
+    -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.4),5,0,0,0);
+}
+.white-bg{
+    -fx-background-color:#fff;
+    -fx-background-radius:8px;
+}
