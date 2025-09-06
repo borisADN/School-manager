@@ -6,10 +6,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import org.example.school_manager.Interfaces.UserInterface;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.time.LocalDate;
 
 public class User implements UserInterface {
@@ -42,7 +39,7 @@ public class User implements UserInterface {
         return date;
     }
 
-    public void  createStudent() {
+    public void  createStudent() throws SQLException {
         date=dateB.getValue();
         String sql = "INSERT INTO Student"
                 + "(firstname,lastname,dateOfBirth,placeOfBirth,schoolGrade)"

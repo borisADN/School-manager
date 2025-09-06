@@ -10,10 +10,7 @@ import org.example.school_manager.models.Database;
 import org.example.school_manager.models.User;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -46,7 +43,7 @@ public class adminController {
 
 
     @FXML
-    void save_students() {
+    void save_students() throws SQLException {
         date = dateB.getValue();
         String sql = "INSERT INTO Student"
                 + "(firstname,lastname,dateOfBirth,placeOfBirth,schoolGrade)"

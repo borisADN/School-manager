@@ -17,6 +17,7 @@ import org.example.school_manager.models.Database;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class LoginController implements LoginInterface {
@@ -32,14 +33,15 @@ public class LoginController implements LoginInterface {
 
 
     @FXML
-    void login() {
+    void login() throws SQLException {
         String sql = "SELECT * FROM  User WHERE email=? AND password =?";
        connection=Database.connectDb();
         try {
-            System.out.println("connectee");
+
             Alert alert;
 
 
+            assert connection != null;
             prepare = connection.prepareStatement(sql);
             prepare.setString(1, email.getText());
             prepare.setString(2, password.getText());
